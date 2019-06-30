@@ -1,29 +1,51 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ABC, {Columns} from 'abc-standard-table';
+import ABCStandardTable from "abc-standard-table";
+import {message, Table} from "antd";
+import Components from "./components";
+import 'antd/dist/antd.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import {BrowserRouter, Route} from "react-router-dom";
+import Test from "./page/test";
+import Checkbox from "./components/Checkbox";
+import Typography from "./components/typography";
+import Show from "./components/typography/show";
+import AffixShow from './components/affix/show';
+import DropDown from "./components/dropdown/show";
+import Resize from './components/resize/show';
+import Animate from "./page/animate/animate";
+import ScrollToBottom from "./components/swipeToBottom/show";
+import FakeForm from './components/fakeForm/show';
+let Context = React.createContext("test");
+let Component=(props:any)=> {
+  return <div>
+    {props}
+  </div>
+}
 
+interface Record {
+  name: string;
+  sex: string;
+  age: string;
+}
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header ggggjhh">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>dddf</p>
-        <p>dddf</p>
-        <p>dddf</p>
-        <p>dddf</p>
-        <a
-          className="App-link hh"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <BrowserRouter>
+          <Route exact path={"/"} component={Components}/>
+          <Route path={'/test'} component={Test}/>
+          <Route path={'/checkbox'} component={Checkbox}/>
+          <Route path={'/typography'} component={Show}/>
+          <Route path={"/affix"} component={AffixShow}/>
+          <Route path={'/dropdown'} component={DropDown}/>
+          <Route path={"/resize"} component={Resize}/>
+          <Route path={"/animate"} component={Animate}/>
+          <Route path={"/scrollToBottom"} component={ScrollToBottom}/>
+          <Route path={"/fakeForm"} component={FakeForm}/>
+        </BrowserRouter>
+      </div>
   );
 }
 

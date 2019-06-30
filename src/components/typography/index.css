@@ -1,0 +1,36 @@
+.p-mark {
+    background-color: #ffe590;
+}
+.p-deleted{
+    text-decoration: line-through;
+}
+.p-disabled {
+    cursor: not-allowed;
+    color: rgba(4, 2, 5, 0.44);
+    user-select: none;
+}
+.p-underline {
+    text-decoration: underline;
+}
+.p-strong {
+    font-weight: bold;
+}
+.copy-icon {
+    font-size: 1.3em;
+    color: deepskyblue;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+.p-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.p-ellipsis-much {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}

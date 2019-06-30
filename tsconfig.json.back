@@ -1,25 +1,26 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
-    "target": "esnext",
+    "target": "es2018",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "outDir": "dist",
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
-    "jsx": "preserve",
-    "forceConsistentCasingInFileNames": true
+    "jsx": "preserve"
   },
   "include": [
     "src"
