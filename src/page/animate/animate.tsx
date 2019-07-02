@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import 'animate.css/animate.css';
 
 // import {Prompt} from 'react-router-dom';
 class Animate extends Component {

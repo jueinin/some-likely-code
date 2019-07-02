@@ -4,9 +4,7 @@ import './App.css';
 import ABC, {Columns} from 'abc-standard-table';
 import ABCStandardTable from "abc-standard-table";
 import {message, Table} from "antd";
-import Components from "./components";
 import 'antd/dist/antd.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import {BrowserRouter, Route} from "react-router-dom";
 import Test from "./page/test";
 import Checkbox from "./components/Checkbox";
@@ -18,6 +16,7 @@ import Resize from './components/resize/show';
 import Animate from "./page/animate/animate";
 import ScrollToBottom from "./components/swipeToBottom/show";
 import FakeForm from './components/fakeForm/show';
+import EditableTable from './components/editableTable/show';
 let Context = React.createContext("test");
 let Component=(props:any)=> {
   return <div>
@@ -34,7 +33,6 @@ const App: React.FC = () => {
   return (
       <div className="App">
         <BrowserRouter>
-          <Route exact path={"/"} component={Components}/>
           <Route path={'/test'} component={Test}/>
           <Route path={'/checkbox'} component={Checkbox}/>
           <Route path={'/typography'} component={Show}/>
@@ -44,6 +42,7 @@ const App: React.FC = () => {
           <Route path={"/animate"} component={Animate}/>
           <Route path={"/scrollToBottom"} component={ScrollToBottom}/>
           <Route path={"/fakeForm"} component={FakeForm}/>
+          <Route path={'/editableTable'} component={EditableTable}/>
         </BrowserRouter>
       </div>
   );

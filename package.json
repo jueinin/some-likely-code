@@ -1,6 +1,6 @@
 {
   "name": "chen-my-component",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "proxy": "http://192.168.8.103:8080",
   "types": "src/types",
@@ -9,11 +9,6 @@
   },
   "main": "dist/main.jsx",
   "devDependencies": {
-
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
-    "@tonyduanesmith/react-photoswipe": "^1.3.0",
     "@types/classnames": "^2.2.8",
     "@types/jest": "24.0.12",
     "@types/lodash": "^4.14.135",
@@ -23,27 +18,18 @@
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.3",
-    "abc-standard-table": "^1.2.12",
-    "animate.css": "^3.7.2",
-    "antd": "^3.18.1",
-    "axios": "^0.18.0",
-    "chen-my-component": "^0.1.0",
-    "classnames": "^2.2.6",
-    "less": "^3.9.0",
-    "lodash": "^4.17.11",
-    "mobx": "^5.9.4",
-    "mobx-react": "^5.4.4",
-    "node-sass": "^4.12.0",
-    "photoswipe": "^4.1.3",
-    "prop-types": "^15.7.2",
-    "rc-notification": "^3.3.1",
-    "react": "^16.8.6",
-    "react-clipboard.js": "^2.0.7",
-    "react-dom": "^16.8.6",
-    "react-html": "^2.1.0",
     "react-router-dom": "^5.0.0",
+    "node-sass": "^4.12.0",
     "react-scripts": "3.0.1",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "react-dom": "^16.8.6",
+    "react": "^16.8.6"
+  },
+  "dependencies": {
+    "antd": "^3.18.1",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.7.2"
   },
   "scripts": {
     "start": "react-scripts start",

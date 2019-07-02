@@ -1,7 +1,3 @@
-import * as React from 'react';
-
-class Dd extends React.Component{
-    do=()=>{
-        this.dtytd();
-    }
-}
+let addUnit = require("./util");
+let m = addUnit.addChineseUnit(123567687909, 2);
+console.log(m);

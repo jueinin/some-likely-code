@@ -3,7 +3,7 @@ import {createForm} from "./index";
 import {Button, Input} from "antd";
 class Show extends Component<any,any> {
     onClick=()=>{
-
+        this.props.form.setFieldValue("chen","dafafa")
     }
     render() {
         let {getFieldDecorator} = this.props.form;
