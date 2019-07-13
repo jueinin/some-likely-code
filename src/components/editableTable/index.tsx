@@ -85,7 +85,7 @@ class EditableTable extends React.Component<EditableTableProps,EditableTableStat
                 title: "age",
                 dataIndex: "age",
                 width: 200,
-                editable: true,
+                // onCell: ()
             },
             {
                 title: "address",

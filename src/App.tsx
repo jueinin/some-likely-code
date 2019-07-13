@@ -17,6 +17,9 @@ import Animate from "./page/animate/animate";
 import ScrollToBottom from "./components/swipeToBottom/show";
 import FakeForm from './components/fakeForm/show';
 import EditableTable from './components/editableTable/show';
+import CodeMirrorTest from './components/codeMirror/show';
+// @ts-ignore
+import MobxTest from './components/mobxantd/show';
 let Context = React.createContext("test");
 let Component=(props:any)=> {
   return <div>
@@ -43,6 +46,8 @@ const App: React.FC = () => {
           <Route path={"/scrollToBottom"} component={ScrollToBottom}/>
           <Route path={"/fakeForm"} component={FakeForm}/>
           <Route path={'/editableTable'} component={EditableTable}/>
+          <Route path={"/codemirror"} component={CodeMirrorTest}/>
+          <Route path={'/mobxtest'} component={MobxTest}/>
         </BrowserRouter>
       </div>
   );
