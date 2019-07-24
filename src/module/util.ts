@@ -1,3 +1,5 @@
+import TreeModel from 'tree-model';
+import flatDeep from 'lodash/flattenDeep';
 /**
  * 为数字加上单位：万或亿
  *
@@ -17,7 +19,7 @@
  * @param {number} decimalDigit 小数点后最多位数，默认为2
  * @return {string} 加上单位后的数字
  */
-function addChineseUnit(number: number, decimalDigit: number) {
+function addChineseUnit(number: number, decimalDigit?: number) {
     var addWan = function (integer: number, number: number, mutiple: number, decimalDigit: number) {
         var digit = getDigit(integer);
         if (digit > 3) {
@@ -40,8 +42,8 @@ function addChineseUnit(number: number, decimalDigit: number) {
         return digit;
     };
 
-    let add = function (number: number, decimalDigit: number) {
-        decimalDigit = decimalDigit == null ? 2 : decimalDigit;
+    let add = function (number: number, decimalDigit?: number) {
+        decimalDigit = decimalDigit || 2;
         var integer = Math.floor(number);
         var digit = getDigit(integer);
         // ['个', '十', '百', '千', '万', '十万', '百万', '千万'];
@@ -64,4 +66,47 @@ function addChineseUnit(number: number, decimalDigit: number) {
     };
     return add(number, decimalDigit);
 }
-export {addChineseUnit}
+
+let treeModel = new TreeModel();
+/**
+ *
+ * @param {T[]} data
+ * @param {(node: T) => boolean} func
+ * @returns {T[]}
+ */
+let treeFilter=<T>(data: T[],func: (node:T)=>boolean):T[]=>{  // 递归过滤tree,func的参数是每个子节点,返回值是过滤后拿到的子元素们
+    let dd: Array<TreeModel.Node<T>>[] = data.map(item=>{
+        let tree=treeModel.parse(item);
+        return tree.all(node=>func(node.model))
+    })
+    let temp= flatDeep(dd) as  TreeModel.Node<T>[];
+    return temp.filter(item=>{
+        return !!item
+    }).map(item=>{
+        return item!.model
+    })
+}
+
+let treeWalk=<T>(data:T[],callback:(node:T)=>any)=>{
+    let dd=data.map(item=>{
+        let tree = treeModel.parse(item);
+        tree.walk(visitingNode => callback(visitingNode.model));
+    })
+}
+
+/**@example axios({
+  url: 'http://api.dev/file-download', //your url
+  method: 'GET',
+  responseType: 'blob', // important
+  尚未经给测试可能不太稳定
+}) */
+let download = (response: any, fileName: string) => {
+    const url = URL.createObjectURL(new Blob(response));
+    const link = document.createElement("a");
+    link.setAttribute("download", fileName);
+    link.setAttribute('href', url);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+};
+export {addChineseUnit, treeFilter, treeWalk};
