@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './components/translation-test/i18nConfig'
 import ABC, {Columns} from 'abc-standard-table';
 import ABCStandardTable from "abc-standard-table";
 import {message, Table} from "antd";
@@ -18,6 +19,7 @@ import ScrollToBottom from "./components/swipeToBottom/show";
 import FakeForm from './components/fakeForm/show';
 import EditableTable from './components/editableTable/show';
 import CodeMirrorTest from './components/codeMirror/show';
+import Translate from './components/translation-test/show';
 // @ts-ignore
 import MobxTest from './components/mobxantd/show';
 let Context = React.createContext("test");
@@ -48,6 +50,7 @@ const App: React.FC = () => {
           <Route path={'/editableTable'} component={EditableTable}/>
           <Route path={"/codemirror"} component={CodeMirrorTest}/>
           <Route path={'/mobxtest'} component={MobxTest}/>
+          <Route path={'/translate'} component={Translate}/>
         </BrowserRouter>
       </div>
   );

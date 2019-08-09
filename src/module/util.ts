@@ -109,4 +109,12 @@ let download = (response: any, fileName: string) => {
     link.click();
     link.remove();
 };
-export {addChineseUnit, treeFilter, treeWalk};
+function composer(...hocs:Function[]) {
+    if (hocs.length === 1) {
+        return hocs[0];
+    }
+    return hocs.reduce((accumulator, currentValue) => {
+        return (...args: any) => accumulator(currentValue(...args))
+    })
+}
+export {addChineseUnit, treeFilter, treeWalk,composer,};
