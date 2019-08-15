@@ -20,6 +20,8 @@ import FakeForm from './components/fakeForm/show';
 import EditableTable from './components/editableTable/show';
 import CodeMirrorTest from './components/codeMirror/show';
 import Translate from './components/translation-test/show';
+import TwoField from './components/fakeFormTest/show';
+import WorkerTest from "./components/webworker";
 // @ts-ignore
 import MobxTest from './components/mobxantd/show';
 let Context = React.createContext("test");
@@ -51,6 +53,8 @@ const App: React.FC = () => {
           <Route path={"/codemirror"} component={CodeMirrorTest}/>
           <Route path={'/mobxtest'} component={MobxTest}/>
           <Route path={'/translate'} component={Translate}/>
+          <Route path={"/twoField"} component={TwoField}/>
+          <Route path={"/worker"} component={WorkerTest}/>
         </BrowserRouter>
       </div>
   );

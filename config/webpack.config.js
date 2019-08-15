@@ -1,5 +1,5 @@
 'use strict';
-
+const WorkerPlugin = require('worker-plugin');
 const fs = require('fs');
 const isWsl = require('is-wsl');
 const path = require('path');
@@ -475,6 +475,7 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
+      new WorkerPlugin(),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
