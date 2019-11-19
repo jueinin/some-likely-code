@@ -1,0 +1,22 @@
+@import "../varible";
+
+$btn-prefix-cls: '#{$chen-prefix}-btn';
+* {
+  box-sizing: border-box;
+}
+.#{$btn-prefix-cls} {
+  all: unset;
+  line-height: $line-height-base;
+  padding: 4px 8px;
+  font-size: 1.15rem;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  font-weight: 400;
+  background: white;
+  //box-shadow: 0 2px 0px grey;
+  cursor: pointer;
+  color: #424242;
+  text-transform: capitalize;
+  display: inline-block;
+
+}
